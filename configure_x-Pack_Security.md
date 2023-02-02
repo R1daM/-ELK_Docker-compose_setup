@@ -8,7 +8,7 @@
     cd /usr/share/elasticsearch/bin
     sudo ./elasticsearch-setup-passwords auto #make sure to save all those passwords on a safe place !!
 5. run this command : 
-    curl -XGET -u elastic:Wu7zEqYfm5SAQVrvGQVE http://host_ip:9200/_cluster/health?pretty 
+    curl -XGET -u elastic:elastic_generated_password http://host_ip:9200/_cluster/health?pretty 
 6. Add the default username in kibana.yml file 
     elasticsearch.username: "kibana"
     elasticsearch.password: "new_password" #you will find this password in 4th step !
