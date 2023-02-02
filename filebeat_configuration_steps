@@ -1,0 +1,19 @@
+1. install filebeat : 
+     curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-8.6.1-amd64.deb
+     sudo dpkg -i filebeat-8.6.1-amd64.deb
+2. enable and configure modules : 
+     filebeat modules list
+     filebeat modules enable nginx
+3. In the module config under modules.d, change the module settings to match your environment. You must enable at least one fileset in the module. Filesets are disabled by default.
+   For example, log locations are set based on the OS. If your logs aren’t in default locations, set the paths variable:
+     a. add the following lines to nginx.yml file (/etc/filebeat/modules.d) : 
+            access:
+             enabled: true
+             var.paths: ["/var/log/nginx/access.log*"]
+     b. Make sure the user specified in filebeat.yml is authorized to set up Filebeat.
+     c. From the installation directory, run:
+              filebeat setup -e
+4. start filebeat : 
+            sudo service filebeat start
+            
+       
