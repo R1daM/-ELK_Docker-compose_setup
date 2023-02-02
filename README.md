@@ -2,5 +2,5 @@
 
 # read this first : 
     start with configuring the elasticsearch container first !
-    after that do changes on kibana.yml file on kibana container using vi editor ! 
+    after that do changes to kibana.yml file on kibana container using the vi editor ! 
     that's all .
